@@ -1,0 +1,42 @@
+<div class="mainSearchBox">
+  <label class="searchLabel" for="searchInput"
+    >მარტივად იპოვე შენი ახალი სახლი</label
+  >
+  <div class="searchBox">
+    <div (click)="openCategories()" class="transactionType">
+      <div>
+        <p class="transactionLabel">გარიგების ტიპი</p>
+        <p *ngIf="!sellingTypeGeo">ყველა</p>
+        <p *ngIf="sellingType">{{ sellingTypeGeo }}</p>
+      </div>
+      <!-- <ion-icon name="chevron-down-outline"></ion-icon> -->
+      <div *ngIf="dropDownOn" class="transactionTypeChooser">
+        <p (click)="allEvent()">ყველა</p>
+        <p (click)="sellingEvent()">იყიდება</p>
+        <p (click)="leaseHoldEvent()">გირავდება</p>
+        <p (click)="rentingEvent()">ქირავდება</p>
+        <p (click)="rentingDailyEvent()">ქირავდება დღიურად</p>
+      </div>
+    </div>
+    <div class="inputFieldBox">
+      <input
+        #value
+        (keyup.enter)="searchEvent(value.value)"
+        (click)="selectSearchValue($event)"
+        class="inputField"
+        type="text"
+        placeholder="მაგ: ბათუმი"
+      />
+    </div>
+    <div class="id">
+      <input
+        #valueID
+        (keyup.enter)="searchEventID(valueID.value)"
+        (click)="selectSearchValue($event)"
+        class="inputField"
+        type="text"
+        placeholder="ID"
+      />
+    </div>
+  </div>
+</div>

@@ -5,6 +5,25 @@ const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
+
+// save
+
+// this.service.searchEvent.subscribe((searchValue: string) => {
+//   console.log(this.router.snapshot.params);
+//   this.homeData = this.service.getHomeData();
+//   if (this.homeDataFiltered) {
+//     this.homeData = this.homeDataFiltered;
+//   }
+//   this.homeData = this.homeData.filter((home: HomeDetailsCard) => {
+//     if (Array.isArray(home.location)) {
+//       return home.location.some((el: string) =>
+//         el.startsWith(searchValue.toLowerCase())
+//       );
+//     } else {
+//       return home.location.startsWith(searchValue.toLowerCase());
+//     }
+//   });
+// });

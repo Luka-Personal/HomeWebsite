@@ -1,0 +1,32 @@
+.lari,
+.dollar {
+  filter: invert();
+  z-index: 999;
+}
+.lari {
+  width: 0.9rem;
+  height: 1rem;
+}
+.dollar {
+  width: 0.6rem;
+  height: 1.1rem;
+}
+.currencyButton {
+  background-color: #eaeaea;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 0.35rem 0.5rem;
+  gap: 1rem;
+  border-radius: 0.9rem;
+  position: relative;
+  cursor: pointer;
+}
+.activeCurrency {
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: rgb(110 58 158);
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+}

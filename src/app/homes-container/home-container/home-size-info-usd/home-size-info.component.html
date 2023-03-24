@@ -1,0 +1,7 @@
+<div>
+  <p class="pricingAndInfo">
+    {{ homeInfo.sellingPrice ? (priceUSD / homeInfo.homeSize).toFixed(1) : "" }}
+    <span *ngIf="homeInfo.sellingPrice">მ²</span>
+  </p>
+  <p class="pricingAndInfo">{{ homeInfo.homeSize }} <span>მ²</span></p>
+</div>

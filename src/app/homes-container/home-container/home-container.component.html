@@ -1,0 +1,64 @@
+<div class="cardBox">
+  <div class="cardImageBox">
+    <ion-icon
+      (click)="slideR(homeInfo.photoUrls.length)"
+      class="icon forwardIcon"
+      name="chevron-forward-outline"
+    ></ion-icon>
+    <img class="cardImage" [src]="homeInfo.photoUrls[num]" alt="" />
+    <ion-icon
+      (click)="slideL(homeInfo.photoUrls.length)"
+      class="icon backIcon"
+      name="chevron-back-outline"
+    ></ion-icon>
+  </div>
+  <div>
+    <h3 class="main-title">
+      {{ homeInfo.title }}
+    </h3>
+    <div class="pricingAndInfoBox">
+      <app-trans-info-gel
+        *ngIf="!isUsd"
+        [homeInfo]="homeInfo"
+      ></app-trans-info-gel>
+      <app-trans-info-usd
+        *ngIf="isUsd"
+        [homeInfo]="homeInfo"
+      ></app-trans-info-usd>
+      <app-currencybtn [isUSD]="isUsd"></app-currencybtn>
+      <app-home-size-info-usd
+        *ngIf="isUsd; else perMprice"
+        [homeInfo]="homeInfo"
+      ></app-home-size-info-usd>
+      <ng-template #perMprice>
+        <p class="pricingAndInfo">
+          {{
+            homeInfo.sellingPrice
+              ? (homeInfo.sellingPrice / homeInfo.homeSize).toFixed(1)
+              : ""
+          }}
+          <span *ngIf="homeInfo.sellingPrice">მ²</span>
+        </p>
+        <p class="pricingAndInfo">{{ homeInfo.homeSize }} <span>მ²</span></p>
+      </ng-template>
+    </div>
+    <div class="homeDetails">
+      <span *ngIf="homeInfo.floor"
+        ><img class="stairs" src="assets/stairs.svg" alt="" />სარ.
+        {{ homeInfo.floor }}</span
+      >
+      <span *ngIf="homeInfo.rooms"
+        ><img class="door" src="assets/door.svg" alt="" />ოთ.
+        {{ homeInfo.rooms }}
+      </span>
+      <span *ngIf="homeInfo.bedroom"
+        ><img class="bed" src="assets/bed.svg" alt="" />საძ.
+        {{ homeInfo.bedroom }}
+      </span>
+    </div>
+    <div class="homeDetailComment">
+      <p class="detailedTitle">{{ homeInfo.detailedTitle }}</p>
+      <p class="dateUploaded">{{ homeInfo.dateUploaded }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+.hero-container {
+  padding: 15rem 5rem 0 5rem;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 20rem;
+}
+.test {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}

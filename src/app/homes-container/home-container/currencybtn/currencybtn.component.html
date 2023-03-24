@@ -1,0 +1,20 @@
+<button
+  class="currencyButton"
+  type="button"
+  title="cur"
+  (click)="emitCurChangeEvent()"
+>
+  <img
+    class="lari"
+    [ngStyle]="{ filter: isUSD ? 'none' : 'invert()' }"
+    src="assets/lari.svg"
+    alt=""
+  />
+  <img
+    [ngStyle]="{ filter: !isUSD ? 'none' : 'invert()' }"
+    class="dollar"
+    src="assets/dollar.svg"
+    alt=""
+  />
+  <div [ngStyle]="{ left: isUSD ? '50%' : '0' }" class="activeCurrency"></div>
+</button>

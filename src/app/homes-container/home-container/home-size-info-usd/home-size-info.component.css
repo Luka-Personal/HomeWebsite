@@ -1,0 +1,8 @@
+div {
+  display: flex;
+  gap: 1rem;
+}
+.pricingAndInfo {
+  font-size: 1.3rem;
+  color: #333;
+}
