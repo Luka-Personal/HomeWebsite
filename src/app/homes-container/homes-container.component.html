@@ -1,9 +1,8 @@
 <div class="hero-container">
   <app-hero></app-hero>
 </div>
-<div class="test">
+<div class="home-container">
   <app-home-container
-    [routerLink]="['/homedetails', home.id]"
     [homeInfo]="home"
     *ngFor="let home of homeData"
   ></app-home-container>

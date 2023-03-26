@@ -81,8 +81,39 @@
   position: absolute;
   background-color: #fff;
   width: 100%;
+  z-index: 999;
 }
 .mainSearchBox {
   max-width: 110rem;
   margin: 0 auto;
+}
+
+@media (max-width: 32.5em) {
+  .searchBox {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1.5rem;
+  }
+  .inputFieldBox::before {
+    display: none;
+  }
+  .id::after {
+    display: none;
+  }
+  .inputField {
+    padding: 0.9rem;
+  }
+  .transactionType {
+    width: calc(100% + 0.5rem);
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid rgba(38, 38, 42, 0.2);
+  }
+  .id {
+    border-top: 1px solid rgba(38, 38, 42, 0.2);
+    width: 100%;
+  }
+  .searchLabel {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }

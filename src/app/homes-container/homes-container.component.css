@@ -1,12 +1,18 @@
 .hero-container {
-  padding: 15rem 5rem 0 5rem;
+  padding: 15rem 5rem 20rem 5rem;
   width: 100%;
   margin: 0 auto;
   padding-bottom: 20rem;
 }
-.test {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
+.home-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+  gap: 0.5rem;
+  padding: 0 3rem;
+  justify-items: center;
+}
+@media (max-width: 32.5em) {
+  .hero-container {
+    padding: 10rem 3rem 5rem 3rem;
+  }
 }
